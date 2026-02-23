@@ -198,7 +198,7 @@
             }
         }
 
-        /* Header Section */
+        /* Header Section - Updated for single line */
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -217,16 +217,33 @@
             50% { transform: translateY(-15px); }
         }
 
+        /* Updated heading - Single line with large font */
         .header h1 {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #a8b8ff);
+            background: linear-gradient(135deg, #fff, #a8b8ff, #c3a8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 15px;
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 40px;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 32px;
+            }
         }
 
         .header p {
@@ -236,7 +253,7 @@
             letter-spacing: 1px;
         }
 
-        /* Main Button - Now above stats cards */
+        /* Main Button */
         .button-wrapper {
             text-align: center;
             margin: 30px 0 40px 0;
@@ -308,7 +325,7 @@
             }
         }
 
-        /* Stats Grid - Now below the button */
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -553,50 +570,6 @@
         .footer-links a:hover {
             color: white;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .header h1 {
-                font-size: 32px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .launch-btn {
-                padding: 20px 30px;
-                font-size: 20px;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 28px;
-            }
-
-            .stat-number {
-                font-size: 28px;
-            }
-
-            .feature-item {
-                padding: 15px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -624,11 +597,11 @@
             <div class="floating-icon">
                 <i class="fas fa-vote-yea"></i>
             </div>
-            <h1>मतदान केंद्र<br>माहिती प्रणाली</h1>
+            <h1>मतदान केंद्र माहिती प्रणाली</h1>
             <p>सोपी | सुरक्षित | जलद</p>
         </div>
 
-        <!-- Main Button - Now above stats cards -->
+        <!-- Main Button -->
         <div class="button-wrapper">
             <a href="https://script.google.com/macros/s/AKfycbwV--g5jhc4lmgPFoPtrHysjtzNuLajIhgp96yvg6kdiMUnN5xcjYKUoCPmLfA41CO7/exec" 
                class="launch-btn" 
@@ -640,7 +613,7 @@
             </a>
         </div>
 
-        <!-- Stats Grid - Below the button -->
+        <!-- Stats Grid -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-icon">
