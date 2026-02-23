@@ -174,13 +174,13 @@
         .container {
             position: relative;
             z-index: 1;
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 40px;
-            padding: 50px;
+            padding: 60px;
             box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2),
                         0 0 0 2px rgba(255, 255, 255, 0.1) inset;
             animation: slideInUp 1s ease-out;
@@ -198,16 +198,16 @@
             }
         }
 
-        /* Header Section - Updated for single line */
+        /* Header Section */
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .floating-icon {
-            font-size: 80px;
+            font-size: 100px;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
             animation: float 3s ease-in-out infinite;
         }
@@ -217,46 +217,32 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* Updated heading - Single line with large font */
+        /* Large Heading */
         .header h1 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 800;
             background: linear-gradient(135deg, #fff, #a8b8ff, #c3a8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
             white-space: nowrap;
             line-height: 1.2;
         }
 
-        /* Responsive for smaller screens */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 40px;
-                white-space: normal;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 32px;
-            }
-        }
-
         .header p {
-            font-size: 18px;
+            font-size: 24px;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
-        /* Main Button */
+        /* Main Button - Large */
         .button-wrapper {
             text-align: center;
-            margin: 30px 0 40px 0;
+            margin: 40px 0 50px 0;
             position: relative;
         }
 
@@ -264,14 +250,14 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             background: linear-gradient(135deg, #667eea, #764ba2, #9f7aea);
             background-size: 200% 200%;
             color: white;
             border: none;
-            padding: 25px 60px;
-            border-radius: 60px;
-            font-size: 24px;
+            padding: 30px 70px;
+            border-radius: 70px;
+            font-size: 28px;
             font-weight: 700;
             cursor: pointer;
             text-decoration: none;
@@ -296,12 +282,8 @@
                         0 0 0 3px rgba(255, 255, 255, 0.3) inset;
         }
 
-        .launch-btn:active {
-            transform: translateY(0) scale(1);
-        }
-
         .launch-btn i {
-            font-size: 28px;
+            font-size: 32px;
             transition: transform 0.3s ease;
         }
 
@@ -325,20 +307,20 @@
             }
         }
 
-        /* Stats Grid */
+        /* Stats Grid - Large */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 40px;
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
         .stat-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
-            border-radius: 25px;
-            padding: 25px;
+            border-radius: 30px;
+            padding: 35px 25px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s ease;
@@ -368,42 +350,42 @@
         }
 
         .stat-icon {
-            font-size: 40px;
+            font-size: 50px;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 44px;
             font-weight: 700;
             color: white;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .stat-label {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
             letter-spacing: 1px;
         }
 
-        /* Features Grid */
+        /* Features Grid - Large */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
         .feature-item {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 25px;
+            padding: 25px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             animation: fadeInRight 0.8s ease-out;
@@ -433,42 +415,42 @@
         }
 
         .feature-icon {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 32px;
             color: white;
         }
 
         .feature-text h4 {
             color: white;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .feature-text p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
             font-weight: 300;
         }
 
-        /* Info Cards */
+        /* Info Cards - Large */
         .info-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 20px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .info-card {
             background: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 25px;
+            padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             animation: fadeInLeft 0.8s ease-out;
@@ -497,16 +479,17 @@
 
         .info-card h3 {
             color: white;
-            font-size: 18px;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .info-card h3 i {
             color: #667eea;
+            font-size: 28px;
         }
 
         .info-card ul {
@@ -514,30 +497,30 @@
         }
 
         .info-card ul li {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .info-card ul li i {
             color: #28a745;
-            font-size: 12px;
+            font-size: 16px;
         }
 
-        /* Footer */
+        /* Footer - Large */
         .footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
+            margin-top: 60px;
+            padding-top: 35px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
             font-weight: 300;
         }
 
@@ -556,19 +539,57 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
+            gap: 30px;
+            margin-top: 20px;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 16px;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: white;
+        }
+
+        /* Responsive Design - Large fonts adjust */
+        @media (max-width: 992px) {
+            .container { padding: 40px; }
+            .header h1 { font-size: 52px; }
+            .header p { font-size: 20px; }
+            .launch-btn { padding: 25px 50px; font-size: 24px; }
+            .stat-number { font-size: 36px; }
+            .stat-label { font-size: 16px; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 30px; }
+            .header h1 { 
+                font-size: 44px;
+                white-space: normal;
+            }
+            .header p { font-size: 18px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .info-cards { grid-template-columns: 1fr; }
+            .launch-btn { 
+                padding: 20px 40px; 
+                font-size: 22px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 36px; }
+            .header p { font-size: 16px; }
+            .stat-number { font-size: 32px; }
+            .stat-label { font-size: 14px; }
+            .feature-text h4 { font-size: 18px; }
+            .feature-text p { font-size: 14px; }
+            .info-card h3 { font-size: 20px; }
+            .info-card ul li { font-size: 16px; }
         }
     </style>
 </head>
