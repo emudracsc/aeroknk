@@ -174,7 +174,7 @@
         .container {
             position: relative;
             z-index: 1;
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -236,7 +236,79 @@
             letter-spacing: 1px;
         }
 
-        /* Stats Grid */
+        /* Main Button - Now above stats cards */
+        .button-wrapper {
+            text-align: center;
+            margin: 30px 0 40px 0;
+            position: relative;
+        }
+
+        .launch-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #9f7aea);
+            background-size: 200% 200%;
+            color: white;
+            border: none;
+            padding: 25px 60px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4),
+                        0 0 0 2px rgba(255, 255, 255, 0.2) inset;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: gradientBG 3s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .launch-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.6),
+                        0 0 0 3px rgba(255, 255, 255, 0.3) inset;
+        }
+
+        .launch-btn:active {
+            transform: translateY(0) scale(1);
+        }
+
+        .launch-btn i {
+            font-size: 28px;
+            transition: transform 0.3s ease;
+        }
+
+        .launch-btn:hover i {
+            transform: rotate(360deg) scale(1.2);
+        }
+
+        .btn-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            to {
+                left: 100%;
+            }
+        }
+
+        /* Stats Grid - Now below the button */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -368,89 +440,12 @@
             font-weight: 300;
         }
 
-        /* Main Button */
-        .button-wrapper {
-            text-align: center;
-            margin: 40px 0;
-            position: relative;
-        }
-
-        .launch-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2, #9f7aea);
-            background-size: 200% 200%;
-            color: white;
-            border: none;
-            padding: 25px 60px;
-            border-radius: 60px;
-            font-size: 24px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4),
-                        0 0 0 2px rgba(255, 255, 255, 0.2) inset;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: gradientBG 3s ease infinite, pulse 2s infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        .launch-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.6),
-                        0 0 0 3px rgba(255, 255, 255, 0.3) inset;
-        }
-
-        .launch-btn:active {
-            transform: translateY(0) scale(1);
-        }
-
-        .launch-btn i {
-            font-size: 28px;
-            transition: transform 0.3s ease;
-        }
-
-        .launch-btn:hover i {
-            transform: rotate(360deg) scale(1.2);
-        }
-
-        .btn-shine {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            to {
-                left: 100%;
-            }
-        }
-
         /* Info Cards */
         .info-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .info-card {
@@ -633,7 +628,19 @@
             <p>सोपी | सुरक्षित | जलद</p>
         </div>
 
-        <!-- Stats Grid -->
+        <!-- Main Button - Now above stats cards -->
+        <div class="button-wrapper">
+            <a href="https://script.google.com/macros/s/AKfycbwV--g5jhc4lmgPFoPtrHysjtzNuLajIhgp96yvg6kdiMUnN5xcjYKUoCPmLfA41CO7/exec" 
+               class="launch-btn" 
+               target="_self">
+                <i class="fas fa-rocket"></i>
+                प्रणाली सुरू करा
+                <i class="fas fa-arrow-right"></i>
+                <span class="btn-shine"></span>
+            </a>
+        </div>
+
+        <!-- Stats Grid - Below the button -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-icon">
@@ -696,18 +703,6 @@
                     <p>कोणत्याही डिव्हाइसवर वापरा</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Main Button -->
-        <div class="button-wrapper">
-            <a href="https://script.google.com/macros/s/AKfycbwV--g5jhc4lmgPFoPtrHysjtzNuLajIhgp96yvg6kdiMUnN5xcjYKUoCPmLfA41CO7/exec" 
-               class="launch-btn" 
-               target="_self">
-                <i class="fas fa-rocket"></i>
-                प्रणाली सुरू करा
-                <i class="fas fa-arrow-right"></i>
-                <span class="btn-shine"></span>
-            </a>
         </div>
 
         <!-- Info Cards -->
