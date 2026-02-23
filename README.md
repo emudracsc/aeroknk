@@ -2,7 +2,7 @@
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=landscape">
     <title>मतदान केंद्र माहिती प्रणाली</title>
     
     <!-- Font Awesome Icons -->
@@ -15,28 +15,53 @@
             box-sizing: border-box;
         }
 
+        /* Force Landscape Orientation */
+        @media (orientation: portrait) {
+            body::before {
+                content: "कृपया फोन आडवा (Landscape mode) करा";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #0f0c29, #302b63);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                text-align: center;
+                padding: 20px;
+                z-index: 9999;
+                font-family: 'Nirmala UI', sans-serif;
+            }
+        }
+
         body {
             font-family: 'Nirmala UI', 'Segoe UI', 'Arial', sans-serif;
             background: #0f0c29;
             background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
             min-height: 100vh;
+            min-width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
             position: relative;
             overflow-x: hidden;
+            overflow-y: auto;
         }
 
         /* Animated Background */
         .circles {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
             z-index: 0;
+            pointer-events: none;
         }
 
         .circles li {
@@ -152,7 +177,7 @@
 
         /* Floating Particles */
         .particles {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -160,6 +185,7 @@
             z-index: 0;
             background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
             animation: pulse 4s ease-in-out infinite;
+            pointer-events: none;
         }
 
         @keyframes pulse {
@@ -167,21 +193,22 @@
             50% { opacity: 1; }
         }
 
-        /* Main Container */
+        /* Main Container - Landscape Optimized */
         .container {
             position: relative;
             z-index: 1;
-            max-width: 1100px;
+            max-width: 1400px;
             width: 100%;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 40px;
-            padding: 60px;
+            padding: 50px;
             box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2),
                         0 0 0 2px rgba(255, 255, 255, 0.1) inset;
             animation: slideInUp 1s ease-out;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 20px auto;
         }
 
         @keyframes slideInUp {
@@ -198,13 +225,13 @@
         /* Header Section */
         .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .floating-icon {
-            font-size: 100px;
+            font-size: 90px;
             color: white;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
             animation: float 3s ease-in-out infinite;
         }
@@ -216,13 +243,13 @@
 
         /* Main Heading */
         .header h1 {
-            font-size: 64px;
+            font-size: 58px;
             font-weight: 700;
             background: linear-gradient(135deg, #fff, #a8b8ff, #c3a8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
             white-space: nowrap;
@@ -230,7 +257,7 @@
         }
 
         .header p {
-            font-size: 24px;
+            font-size: 22px;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 400;
             letter-spacing: 2px;
@@ -239,7 +266,7 @@
         /* Main Button */
         .button-wrapper {
             text-align: center;
-            margin: 40px 0 50px 0;
+            margin: 30px 0 40px 0;
             position: relative;
         }
 
@@ -252,9 +279,9 @@
             background-size: 200% 200%;
             color: white;
             border: none;
-            padding: 30px 70px;
-            border-radius: 70px;
-            font-size: 28px;
+            padding: 25px 60px;
+            border-radius: 60px;
+            font-size: 26px;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
@@ -284,7 +311,7 @@
         }
 
         .launch-btn i {
-            font-size: 32px;
+            font-size: 28px;
             transition: transform 0.3s ease;
         }
 
@@ -308,12 +335,12 @@
             }
         }
 
-        /* Stats Grid */
+        /* Stats Grid - Landscape Optimized */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .stat-card {
@@ -321,7 +348,7 @@
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             border-radius: 30px;
-            padding: 35px 25px;
+            padding: 30px 20px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s ease;
@@ -351,17 +378,17 @@
         }
 
         .stat-icon {
-            font-size: 50px;
+            font-size: 45px;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
         }
 
         .stat-number {
-            font-size: 44px;
+            font-size: 40px;
             font-weight: 700;
             color: white;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
@@ -372,21 +399,19 @@
             letter-spacing: 1px;
         }
 
-        /* Features Grid */
+        /* Features Grid - Landscape Optimized */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .feature-item {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            padding: 20px;
+            text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             animation: fadeInRight 0.8s ease-out;
@@ -411,36 +436,38 @@
 
         .feature-item:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateX(10px);
+            transform: translateY(-5px);
             border-color: rgba(255, 255, 255, 0.3);
         }
 
         .feature-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 28px;
             color: white;
+            margin: 0 auto 15px;
         }
 
         .feature-text h4 {
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
         .feature-text p {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 400;
+            line-height: 1.4;
         }
 
-        /* Info Cards */
+        /* Info Cards - Landscape Optimized */
         .info-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -451,7 +478,7 @@
         .info-card {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 25px;
-            padding: 30px;
+            padding: 25px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             animation: fadeInLeft 0.8s ease-out;
@@ -480,17 +507,17 @@
 
         .info-card h3 {
             color: white;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .info-card h3 i {
             color: #667eea;
-            font-size: 28px;
+            font-size: 24px;
         }
 
         .info-card ul {
@@ -499,29 +526,29 @@
 
         .info-card ul li {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .info-card ul li i {
             color: #28a745;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         /* Footer */
         .footer {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 35px;
+            margin-top: 50px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
         }
 
@@ -540,14 +567,14 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
+            gap: 25px;
+            margin-top: 15px;
         }
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 14px;
             transition: color 0.3s ease;
         }
 
@@ -555,46 +582,48 @@
             color: white;
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .container { padding: 40px; }
-            .header h1 { font-size: 52px; }
-            .header p { font-size: 20px; }
-            .launch-btn { padding: 25px 50px; font-size: 24px; }
-            .stat-number { font-size: 36px; }
-            .stat-label { font-size: 16px; }
+        /* Landscape Mode Specific Adjustments */
+        @media (min-width: 1024px) and (orientation: landscape) {
+            .container {
+                max-width: 95%;
+                padding: 40px;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) and (orientation: landscape) {
             .container { padding: 30px; }
+            .header h1 { font-size: 48px; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) and (orientation: landscape) {
             .header h1 { 
-                font-size: 44px;
+                font-size: 36px;
                 white-space: normal;
             }
-            .header p { font-size: 18px; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .features-grid { grid-template-columns: 1fr; }
-            .info-cards { grid-template-columns: 1fr; }
             .launch-btn { 
-                padding: 20px 40px; 
-                font-size: 22px;
+                padding: 15px 30px; 
+                font-size: 20px;
                 width: 100%;
             }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 { font-size: 36px; }
-            .header p { font-size: 16px; }
-            .stat-number { font-size: 32px; }
-            .stat-label { font-size: 14px; }
-            .feature-text h4 { font-size: 18px; }
-            .feature-text p { font-size: 14px; }
-            .info-card h3 { font-size: 20px; }
-            .info-card ul li { font-size: 16px; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+            .info-cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <!-- Portrait Mode Warning -->
+    <div class="portrait-warning" style="display: none;"></div>
+
     <!-- Animated Background Circles -->
     <ul class="circles">
         <li></li>
@@ -738,5 +767,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Check orientation on load and resize
+        function checkOrientation() {
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // Portrait mode
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Landscape mode
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Initial check
+        checkOrientation();
+
+        // Listen for orientation changes
+        window.addEventListener('resize', checkOrientation);
+        window.addEventListener('orientationchange', checkOrientation);
+    </script>
 </body>
 </html>
