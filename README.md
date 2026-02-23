@@ -217,7 +217,7 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* Large Heading */
+        /* Main Heading - aeroknk removed */
         .header h1 {
             font-size: 64px;
             font-weight: 800;
@@ -239,7 +239,7 @@
             letter-spacing: 2px;
         }
 
-        /* Main Button - Large */
+        /* Main Button */
         .button-wrapper {
             text-align: center;
             margin: 40px 0 50px 0;
@@ -307,7 +307,7 @@
             }
         }
 
-        /* Stats Grid - Large */
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -371,7 +371,7 @@
             letter-spacing: 1px;
         }
 
-        /* Features Grid - Large */
+        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -439,7 +439,7 @@
             font-weight: 300;
         }
 
-        /* Info Cards - Large */
+        /* Info Cards */
         .info-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -510,7 +510,7 @@
             font-size: 16px;
         }
 
-        /* Footer - Large */
+        /* Footer */
         .footer {
             text-align: center;
             margin-top: 60px;
@@ -554,7 +554,7 @@
             color: white;
         }
 
-        /* Responsive Design - Large fonts adjust */
+        /* Responsive Design */
         @media (max-width: 992px) {
             .container { padding: 40px; }
             .header h1 { font-size: 52px; }
