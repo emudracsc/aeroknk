@@ -8,9 +8,6 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
         * {
             margin: 0;
@@ -19,7 +16,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Nirmala UI', 'Segoe UI', 'Arial', sans-serif;
             background: #0f0c29;
             background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
             min-height: 100vh;
@@ -217,10 +214,10 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* Main Heading - aeroknk removed */
+        /* Main Heading */
         .header h1 {
             font-size: 64px;
-            font-weight: 800;
+            font-weight: 700;
             background: linear-gradient(135deg, #fff, #a8b8ff, #c3a8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -229,13 +226,13 @@
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
             white-space: nowrap;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .header p {
             font-size: 24px;
             color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 2px;
         }
 
@@ -258,7 +255,7 @@
             padding: 30px 70px;
             border-radius: 70px;
             font-size: 28px;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.4s ease;
@@ -280,6 +277,10 @@
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 30px 60px rgba(102, 126, 234, 0.6),
                         0 0 0 3px rgba(255, 255, 255, 0.3) inset;
+        }
+
+        .launch-btn:active {
+            transform: translateY(0) scale(1);
         }
 
         .launch-btn i {
@@ -436,7 +437,7 @@
         .feature-text p {
             color: rgba(255, 255, 255, 0.8);
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* Info Cards */
@@ -521,7 +522,7 @@
         .footer p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 18px;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .footer i {
