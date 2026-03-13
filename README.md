@@ -628,7 +628,7 @@
                class="launch-btn" 
                target="_self">
                 <i class="fas fa-rocket"></i>
-                प्रणाली सुरू करा
+                मतदार केंद्रस्‍तरीय अधिकारी सादी पहा (BLO LIST)
                 <i class="fas fa-arrow-right"></i>
                 <span class="btn-shine"></span>
             </a>
