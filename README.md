@@ -2,12 +2,12 @@
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>२६८ - कणकवली विधानसभा संघ मतदान केंद्रस्तरीय अधिकारी माहिती</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>२६८ - कणकवली विधानसभा संघ | मतदान केंद्रस्तरीय अधिकारी माहिती</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,13 +17,12 @@
 
         html, body {
             height: 100%;
-            overflow: hidden; /* No scrolling */
+            overflow: hidden;
         }
 
         body {
-            font-family: 'Nirmala UI', 'Segoe UI', 'Arial', sans-serif;
-            background: #0f0c29;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            font-family: 'Inter', 'Nirmala UI', 'Segoe UI', sans-serif;
+            background: #0a0a2a;
             height: 100vh;
             width: 100vw;
             display: flex;
@@ -33,114 +32,40 @@
             overflow: hidden;
         }
 
-        /* Animated Background */
-        .circles {
+        /* Dynamic Gradient Background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.4), transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.4), transparent 50%),
+                        linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            z-index: -2;
+        }
+
+        /* Animated Mesh Gradient */
+        .mesh-gradient {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            z-index: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+            z-index: -1;
+            animation: meshMove 20s ease-in-out infinite alternate;
         }
 
-        .circles li {
-            position: absolute;
-            display: block;
-            list-style: none;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            animation: animate 25s linear infinite;
-            bottom: -150px;
-            border-radius: 50%;
-        }
-
-        .circles li:nth-child(1) {
-            left: 25%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 0s;
-        }
-
-        .circles li:nth-child(2) {
-            left: 10%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 2s;
-            animation-duration: 12s;
-        }
-
-        .circles li:nth-child(3) {
-            left: 70%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 4s;
-        }
-
-        .circles li:nth-child(4) {
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            animation-delay: 0s;
-            animation-duration: 18s;
-        }
-
-        .circles li:nth-child(5) {
-            left: 65%;
-            width: 20px;
-            height: 20px;
-            animation-delay: 0s;
-        }
-
-        .circles li:nth-child(6) {
-            left: 75%;
-            width: 110px;
-            height: 110px;
-            animation-delay: 3s;
-        }
-
-        .circles li:nth-child(7) {
-            left: 35%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 7s;
-        }
-
-        .circles li:nth-child(8) {
-            left: 50%;
-            width: 25px;
-            height: 25px;
-            animation-delay: 15s;
-            animation-duration: 45s;
-        }
-
-        .circles li:nth-child(9) {
-            left: 20%;
-            width: 15px;
-            height: 15px;
-            animation-delay: 2s;
-            animation-duration: 35s;
-        }
-
-        .circles li:nth-child(10) {
-            left: 85%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 0s;
-            animation-duration: 11s;
-        }
-
-        @keyframes animate {
+        @keyframes meshMove {
             0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-                border-radius: 50%;
+                transform: scale(1) translate(0, 0);
+                opacity: 0.3;
             }
             100% {
-                transform: translateY(-1000px) rotate(720deg);
-                opacity: 0;
-                border-radius: 50%;
+                transform: scale(1.5) translate(5%, 5%);
+                opacity: 0.6;
             }
         }
 
@@ -151,138 +76,192 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            animation: pulse 4s ease-in-out infinite;
-            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
         }
 
-        /* Main Container - Fixed height for no scroll */
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container - Glass Morphism */
         .container {
             position: relative;
-            z-index: 1;
-            width: 95%;
-            max-width: 1400px;
-            height: 95vh;
-            max-height: 950px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 40px;
-            padding: 30px 40px;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2),
-                        0 0 0 2px rgba(255, 255, 255, 0.1) inset;
-            animation: slideInUp 1s ease-out;
+            z-index: 2;
+            width: 92%;
+            max-width: 1350px;
+            height: 92vh;
+            max-height: 900px;
+            background: rgba(15, 12, 41, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 48px;
+            padding: 25px 35px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+                        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: containerGlow 4s ease-in-out infinite alternate;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        @keyframes slideInUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
+        @keyframes containerGlow {
+            0% {
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+                border-color: rgba(255, 255, 255, 0.15);
             }
-            to {
-                transform: translateY(0);
-                opacity: 1;
+            100% {
+                box-shadow: 0 30px 60px rgba(102, 126, 234, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.25) inset;
+                border-color: rgba(255, 255, 255, 0.3);
             }
         }
 
-        /* Header Section - Compact */
+        /* Animated Border */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            border-radius: 50px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .container:hover::before {
+            opacity: 0.15;
+        }
+
+        /* Header Section */
         .header {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .floating-icon {
-            font-size: 70px;
+            font-size: 65px;
             color: white;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-            animation: float 3s ease-in-out infinite;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+            animation: floatIcon 4s ease-in-out infinite;
+            display: inline-block;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(5deg); }
         }
 
         .header h1 {
-            font-size: 48px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fff, #a8b8ff, #c3a8ff);
+            font-size: 44px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #c3b8ff, #a8b8ff, #e0c3ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 8px;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            letter-spacing: 1px;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
             white-space: nowrap;
-            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .header p {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 400;
-            letter-spacing: 2px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            letter-spacing: 3px;
+            word-spacing: 8px;
         }
 
-        /* Main Button - Compact */
+        /* Button Wrapper - Two Buttons Side by Side */
         .button-wrapper {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
             margin: 15px 0 20px 0;
+            flex-wrap: wrap;
         }
 
-        .launch-btn {
+        .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2, #9f7aea);
-            background-size: 200% 200%;
-            color: white;
-            border: none;
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-size: 22px;
+            gap: 12px;
+            padding: 16px 38px;
+            border-radius: 60px;
+            font-size: 18px;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4),
-                        0 0 0 2px rgba(255, 255, 255, 0.2) inset;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: gradientBG 3s ease infinite;
             position: relative;
             overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            font-family: inherit;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .launch-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.6);
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 35px rgba(102, 126, 234, 0.5);
         }
 
-        .launch-btn i {
-            font-size: 24px;
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(240, 147, 251, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 35px rgba(240, 147, 251, 0.4);
+        }
+
+        .btn i {
+            font-size: 20px;
             transition: transform 0.3s ease;
         }
 
-        .launch-btn:hover i {
-            transform: rotate(360deg) scale(1.2);
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .btn-primary:hover i {
+            transform: translateX(5px) rotate(360deg);
+        }
+
+        .btn-secondary:hover i {
+            transform: translateX(-5px) rotate(-360deg);
         }
 
         .btn-shine {
@@ -292,33 +271,49 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shine 3s infinite;
+            animation: btnShine 3s infinite;
         }
 
-        @keyframes shine {
+        @keyframes btnShine {
             to {
                 left: 100%;
             }
         }
 
-        /* Stats Grid - Compact */
+        /* Stats Grid - Enhanced */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 18px;
+            margin-bottom: 18px;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 25px;
-            padding: 20px 15px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            padding: 18px 12px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.4s ease;
-            animation: fadeInUp 0.6s ease-out;
-            animation-fill-mode: both;
+            animation: fadeInUp 0.6s ease-out both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
         }
 
         .stat-card:nth-child(1) { animation-delay: 0.1s; }
@@ -327,7 +322,7 @@
 
         @keyframes fadeInUp {
             from {
-                transform: translateY(20px);
+                transform: translateY(30px);
                 opacity: 0;
             }
             to {
@@ -337,47 +332,48 @@
         }
 
         .stat-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-6px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         .stat-icon {
-            font-size: 40px;
+            font-size: 38px;
             color: white;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .stat-number {
-            font-size: 36px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 5px;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 34px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #e0c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
         }
 
         .stat-label {
-            font-size: 16px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.9);
-            font-weight: 400;
+            font-weight: 500;
         }
 
-        /* Features Grid - Compact */
+        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 14px;
+            margin-bottom: 18px;
         }
 
         .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 15px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 22px;
+            padding: 14px 12px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            animation: fadeInRight 0.6s ease-out;
-            animation-fill-mode: both;
+            animation: fadeInRight 0.6s ease-out both;
         }
 
         .feature-item:nth-child(1) { animation-delay: 0.4s; }
@@ -387,7 +383,7 @@
 
         @keyframes fadeInRight {
             from {
-                transform: translateX(20px);
+                transform: translateX(30px);
                 opacity: 0;
             }
             to {
@@ -397,53 +393,58 @@
         }
 
         .feature-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
+            background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2));
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.25);
         }
 
         .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             color: white;
             margin: 0 auto 10px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: scale(1.05) rotate(5deg);
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
         .feature-text h4 {
             color: white;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .feature-text p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 12px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 11px;
             font-weight: 400;
-            line-height: 1.3;
         }
 
-        /* Info Cards - Compact */
+        /* Info Cards */
         .info-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 15px;
+            gap: 18px;
+            margin-bottom: 14px;
         }
 
         .info-card {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            padding: 18px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            padding: 16px 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            animation: fadeInLeft 0.6s ease-out;
-            animation-fill-mode: both;
+            animation: fadeInLeft 0.6s ease-out both;
         }
 
         .info-card:nth-child(1) { animation-delay: 0.8s; }
@@ -451,7 +452,7 @@
 
         @keyframes fadeInLeft {
             from {
-                transform: translateX(-20px);
+                transform: translateX(-30px);
                 opacity: 0;
             }
             to {
@@ -461,14 +462,15 @@
         }
 
         .info-card:hover {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.45);
             transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.2);
         }
 
         .info-card h3 {
             color: white;
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 700;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
@@ -476,8 +478,11 @@
         }
 
         .info-card h3 i {
-            color: #667eea;
             font-size: 20px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .info-card ul {
@@ -485,35 +490,35 @@
         }
 
         .info-card ul li {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .info-card ul li i {
-            color: #28a745;
+            color: #4facfe;
             font-size: 12px;
         }
 
-        /* Footer - Compact */
+        /* Footer */
         .footer {
             text-align: center;
-            padding-top: 15px;
+            padding-top: 12px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            font-weight: 400;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 13px;
+            font-weight: 500;
         }
 
-        .footer i {
-            color: #e73c7e;
-            animation: heartbeat 1.5s ease infinite;
+        .footer i.fa-heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.4s ease infinite;
         }
 
         @keyframes heartbeat {
@@ -531,49 +536,46 @@
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.55);
             text-decoration: none;
             font-size: 12px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .footer-links a:hover {
             color: white;
+            transform: translateY(-2px);
         }
 
-        /* Responsive for smaller desktop screens */
-        @media (max-width: 1200px) {
-            .container {
-                padding: 20px 30px;
-            }
-            .header h1 { font-size: 42px; }
-            .stat-number { font-size: 32px; }
-            .feature-text h4 { font-size: 14px; }
-            .feature-text p { font-size: 11px; }
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .container { padding: 20px 25px; }
+            .header h1 { font-size: 36px; white-space: normal; line-height: 1.2; }
+            .stat-number { font-size: 28px; }
+            .btn { padding: 14px 28px; font-size: 16px; }
         }
 
         @media (max-height: 800px) {
-            .container {
-                padding: 20px 30px;
-            }
+            .container { padding: 18px 25px; }
             .floating-icon { font-size: 50px; }
-            .header h1 { font-size: 38px; }
-            .header p { font-size: 16px; }
-            .launch-btn { padding: 15px 40px; font-size: 20px; }
-            .stat-card { padding: 15px; }
-            .stat-icon { font-size: 35px; }
-            .stat-number { font-size: 30px; }
-            .stat-label { font-size: 14px; }
-            .feature-item { padding: 12px; }
-            .info-card { padding: 15px; }
-            .info-card h3 { font-size: 16px; }
-            .info-card ul li { font-size: 12px; }
+            .header h1 { font-size: 34px; }
+            .stat-card { padding: 12px; }
+            .stat-icon { font-size: 30px; }
+            .stat-number { font-size: 26px; }
+            .feature-item { padding: 10px; }
+            .info-card { padding: 12px 16px; }
         }
 
-        /* Landscape mode for mobile - show message */
+        /* Landscape orientation warning for mobile */
         @media (orientation: portrait) and (max-width: 768px) {
-            body::before {
-                content: "कृपया फोन आडवा (Landscape mode) करा";
+            .container {
+                display: none;
+            }
+            body::after {
+                content: "📱 कृपया फोन आडवा (Landscape mode) करा | Please rotate your phone to landscape";
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -584,52 +586,63 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 24px;
+                font-size: 20px;
                 text-align: center;
-                padding: 20px;
+                padding: 30px;
                 z-index: 9999;
-                font-family: 'Nirmala UI', sans-serif;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
             }
+        }
+
+        /* Loading animation for buttons */
+        .btn.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .btn.loading i.fa-spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background Circles -->
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <div class="mesh-gradient"></div>
+    <div class="particles" id="particles"></div>
 
-    <!-- Floating Particles -->
-    <div class="particles"></div>
-
-    <!-- Main Container -->
     <div class="container">
         <!-- Header -->
         <div class="header">
             <div class="floating-icon">
                 <i class="fas fa-vote-yea"></i>
             </div>
-            <h1>२६८ - कणकवली विधानसभा संघ मतदान केंद्रस्तरीय अधिकारी माहिती</h1>
-            <p>देवगड | कणकवली  | वैभववाडी</p>
+            <h1>२६८ - कणकवली विधानसभा संघ</h1>
+            <p>मतदान केंद्रस्तरीय अधिकारी माहिती | देवगड • कणकवली • वैभववाडी</p>
         </div>
 
-        <!-- Main Button -->
+        <!-- Two Buttons Side by Side - BOTH have SAME LINK now -->
         <div class="button-wrapper">
             <a href="https://script.google.com/macros/s/AKfycbwV--g5jhc4lmgPFoPtrHysjtzNuLajIhgp96yvg6kdiMUnN5xcjYKUoCPmLfA41CO7/exec" 
-               class="launch-btn" 
-               target="_self">
-                <i class="fas fa-rocket"></i>
-                मतदार केंद्रस्‍तरीय अधिकारी सादी पहा (BLO LIST)
+               class="btn btn-primary" 
+               target="_self"
+               id="bloBtn">
+                <i class="fas fa-users"></i>
+                BLO यादी पहा
                 <i class="fas fa-arrow-right"></i>
+                <span class="btn-shine"></span>
+            </a>
+            <a href="https://script.google.com/macros/s/AKfycbwV--g5jhc4lmgPFoPtrHysjtzNuLajIhgp96yvg6kdiMUnN5xcjYKUoCPmLfA41CO7/exec" 
+               class="btn btn-secondary" 
+               target="_self"
+               id="newBtn">
+                <i class="fas fa-chart-line"></i>
+                2.0
+                <i class="fas fa-chart-simple"></i>
                 <span class="btn-shine"></span>
             </a>
         </div>
@@ -637,64 +650,50 @@
         <!-- Stats Grid -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-building"></i>
-                </div>
-                <div class="stat-number">100+</div>
+                <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="stat-number">१००+</div>
                 <div class="stat-label">मतदान केंद्रे</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="stat-number">200+</div>
+                <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+                <div class="stat-number">२००+</div>
                 <div class="stat-label">अधिकारी</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">उपलब्ध</div>
+                <div class="stat-icon"><i class="fas fa-charging-station"></i></div>
+                <div class="stat-number">२४/७</div>
+                <div class="stat-label">उपलब्धता</div>
             </div>
         </div>
 
         <!-- Features Grid -->
         <div class="features-grid">
             <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-search"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-language"></i></div>
                 <div class="feature-text">
                     <h4>द्विभाषिक शोध</h4>
-                    <p>इंग्रजी / मराठी दोन्हीमध्ये शोधा</p>
+                    <p>इंग्रजी / मराठी</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-history"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-history"></i></div>
                 <div class="feature-text">
                     <h4>बदल इतिहास</h4>
-                    <p>सर्व अपडेटची नोंद ठेवली जाते</p>
+                    <p>सर्व अपडेटची नोंद</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                 <div class="feature-text">
                     <h4>पासवर्ड संरक्षण</h4>
-                    <p>फक्त अधिकृत व्यक्ती अपडेट करू शकतात</p>
+                    <p>सुरक्षित अपडेट</p>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                 <div class="feature-text">
                     <h4>मोबाईल फ्रेंडली</h4>
-                    <p>कोणत्याही डिव्हाइसवर वापरा</p>
+                    <p>सर्व डिव्हाइसवर</p>
                 </div>
             </div>
         </div>
@@ -702,23 +701,21 @@
         <!-- Info Cards -->
         <div class="info-cards">
             <div class="info-card">
-                <h3><i class="fas fa-star"></i> प्रमुख वैशिष्ट्ये</h3>
+                <h3><i class="fas fa-star-of-life"></i> प्रमुख वैशिष्ट्ये</h3>
                 <ul>
-                    <li><i class="fas fa-check-circle"></i> केंद्र क्रमांकाने शोधा</li>
-                    <li><i class="fas fa-check-circle"></i> नावाने शोधा (इंग्रजी/मराठी)</li>
-                    <li><i class="fas fa-check-circle"></i> अधिकारी अपडेट करा</li>
-                    <li><i class="fas fa-check-circle"></i> संपूर्ण इतिहास पहा</li>
-                    <li><i class="fas fa-check-circle"></i> बॅकअप सिस्टीम</li>
+                    <li><i class="fas fa-check-circle"></i> केंद्र क्रमांकाने / नावाने शोधा</li>
+                    <li><i class="fas fa-check-circle"></i> अधिकारी माहिती त्वरित अपडेट</li>
+                    <li><i class="fas fa-check-circle"></i> संपूर्ण बदल इतिहास</li>
+                    <li><i class="fas fa-check-circle"></i> स्वयंचलित बॅकअप प्रणाली</li>
                 </ul>
             </div>
             <div class="info-card">
-                <h3><i class="fas fa-shield-alt"></i> सुरक्षा वैशिष्ट्ये</h3>
+                <h3><i class="fas fa-shield-virus"></i> सुरक्षा वैशिष्ट्ये</h3>
                 <ul>
-                    <li><i class="fas fa-check-circle"></i> पासवर्ड प्रोटेक्शन</li>
-                    <li><i class="fas fa-check-circle"></i> प्रत्येक बदलाची नोंद</li>
-                    <li><i class="fas fa-check-circle"></i> कोणी अपडेट केले ते कळेल</li>
-                    <li><i class="fas fa-check-circle"></i> डेटा बॅकअप</li>
-                    <li><i class="fas fa-check-circle"></i> सुरक्षित प्रवेश</li>
+                    <li><i class="fas fa-lock"></i> पासवर्ड प्रोटेक्शन</li>
+                    <li><i class="fas fa-user-check"></i> कोणी केले अपडेट ओळखा</li>
+                    <li><i class="fas fa-database"></i> एन्क्रिप्टेड डेटा</li>
+                    <li><i class="fas fa-clock"></i> टाइमस्टॅम्पसह लॉग</li>
                 </ul>
             </div>
         </div>
@@ -728,14 +725,58 @@
             <p>
                 <i class="fas fa-heart"></i> 
                 विकसित: मतदान केंद्र माहिती प्रणाली 
-                <i class="fas fa-copyright"></i> 2024
+                <i class="fas fa-copyright"></i> 2025
             </p>
             <div class="footer-links">
                 <a href="#"><i class="fas fa-info-circle"></i> मदत</a>
-                <a href="#"><i class="fas fa-lock"></i> गोपनीयता</a>
-                <a href="#"><i class="fas fa-envelope"></i> संपर्क</a>
+                <a href="#"><i class="fas fa-user-shield"></i> गोपनीयता</a>
+                <a href="#"><i class="fas fa-headset"></i> संपर्क</a>
             </div>
         </div>
     </div>
+
+    <script>
+        // Generate floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 8 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 15 + 8 + 's';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.opacity = Math.random() * 0.4 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+
+        // Add loading effect to both buttons
+        const bloBtn = document.getElementById('bloBtn');
+        const newBtn = document.getElementById('newBtn');
+
+        function addLoadingEffect(btn) {
+            btn.addEventListener('click', function(e) {
+                if (this.classList.contains('loading')) return;
+                this.classList.add('loading');
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> लोड करत आहे... <i class="fas fa-hourglass-half"></i>';
+                
+                setTimeout(() => {
+                    // Don't remove loading - let the page navigate
+                    // The page will navigate to the link
+                }, 500);
+            });
+        }
+
+        addLoadingEffect(bloBtn);
+        addLoadingEffect(newBtn);
+    </script>
 </body>
 </html>
