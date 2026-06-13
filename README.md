@@ -636,7 +636,7 @@
                 <i class="fas fa-arrow-right"></i>
                 <span class="btn-shine"></span>
             </a>
-            <a href="[https://script.google.com/macros/s/AKfycbwV--g5jhc4lmgPFoPtrHysjtzNuLajIhgp96yvg6kdiMUnN5xcjYKUoCPmLfA41CO7/exec](https://script.google.com/macros/s/AKfycbxZmK6dtzixWpb7Qqh6n5byXFDxWuVVcWEmLmEIo_BS91ntuECGTvLWY-2cEf6d3enC/exec)" 
+            <a href="https://script.google.com/macros/s/AKfycbxZmK6dtzixWpb7Qqh6n5byXFDxWuVVcWEmLmEIo_BS91ntuECGTvLWY-2cEf6d3enC/exec" 
                class="btn btn-secondary" 
                target="_self"
                id="newBtn">
